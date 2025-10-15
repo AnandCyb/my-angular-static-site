@@ -48,6 +48,46 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ng build --prod
 ```
 
+For GitHub Pages deployment, build with the correct base-href:
+
+```bash
+npm run build:prod -- --base-href=/my-angular-static-site/
+```
+
+## Deployment to GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+### Automatic Deployment
+
+The project will automatically deploy to GitHub Pages when you push to the `main` branch. The workflow:
+
+1. Builds the Angular application with production optimizations
+2. Configures the correct base-href for GitHub Pages
+3. Uploads the build artifacts
+4. Deploys to GitHub Pages
+
+### Setup Instructions
+
+To enable GitHub Pages deployment for your fork:
+
+1. Go to your repository settings on GitHub
+2. Navigate to **Settings > Pages**
+3. Under **Build and deployment**, select:
+   - **Source**: GitHub Actions
+4. Push changes to the `main` branch
+5. The workflow will run automatically and deploy your site
+
+Once deployed, your site will be available at: `https://[username].github.io/my-angular-static-site/`
+
+### Manual Deployment
+
+You can also trigger a deployment manually:
+
+1. Go to the **Actions** tab in your repository
+2. Select the "Deploy to GitHub Pages" workflow
+3. Click "Run workflow"
+
 ## Project Structure
 
 ```
